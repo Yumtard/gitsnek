@@ -88,6 +88,7 @@ void Game::UpdateModel()
 			
 			else
 			{
+				//dumb fix
 				const bool eating = next == goal.GetLocation();
 				if (eating)
 				{
