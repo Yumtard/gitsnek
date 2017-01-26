@@ -93,15 +93,14 @@ void Game::UpdateModel()
 				{
 					snake.Grow();					
 					bool isOverlapping = false;
-					goal.Respawn(rng, brd, snake);
 					do
 					{
+						goal.Respawn(rng, brd, snake);
 						for (int i = 0; i < nObstacles; i++)
 						{
-							isOverlapping = isOverlapping && obstacles[i].GetLocation() == goal.GetLocation();
+							isOverlapping = isOverlapping && (obstacles[i].GetLocation() == goal.GetLocation());
 							if (isOverlapping)
 							{
-								goal.Respawn(rng, brd, snake);
 								break;
 							}
 						}
